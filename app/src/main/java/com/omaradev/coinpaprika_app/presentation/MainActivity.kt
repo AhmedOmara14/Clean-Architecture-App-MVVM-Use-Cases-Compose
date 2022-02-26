@@ -1,4 +1,4 @@
-package com.omaradev.coinpaprika_app
+package com.omaradev.coinpaprika_app.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
