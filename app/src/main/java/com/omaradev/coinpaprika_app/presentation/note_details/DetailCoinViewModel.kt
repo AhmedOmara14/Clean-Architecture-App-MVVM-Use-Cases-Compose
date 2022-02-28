@@ -6,18 +6,15 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.omaradev.coinpaprika_app.common.Constants
 import com.omaradev.coinpaprika_app.common.Resource
-import com.omaradev.coinpaprika_app.domain.use_case.get_all_coins.GetAllCoinsUseCase
 import com.omaradev.coinpaprika_app.domain.use_case.get_details_coin.GetDetailsCoinUseCase
-import com.omaradev.coinpaprika_app.presentation.note_list.ListCoinState
 import dagger.hilt.android.lifecycle.HiltViewModel
-import dagger.hilt.android.scopes.ViewModelScoped
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import javax.inject.Inject
 
 @HiltViewModel
-class DetailsCoinViewModel (
-    @Inject val getDetailsCoinUseCase: GetDetailsCoinUseCase,
+class DetailCoinViewModel @Inject constructor(
+     val getDetailsCoinUseCase: GetDetailsCoinUseCase,
     savedStateHandle: SavedStateHandle
     ) :ViewModel(){
     private val _state = mutableStateOf(DetailsCoinState())

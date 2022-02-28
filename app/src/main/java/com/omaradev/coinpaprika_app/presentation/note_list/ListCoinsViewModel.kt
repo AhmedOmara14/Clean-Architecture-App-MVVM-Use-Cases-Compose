@@ -13,7 +13,7 @@ import kotlinx.coroutines.flow.onEach
 import javax.inject.Inject
 
 @HiltViewModel
-class ListCoinsViewModel (@Inject val getAllCoinsUseCase: GetAllCoinsUseCase) :ViewModel(){
+class ListCoinsViewModel @Inject constructor( val getAllCoinsUseCase: GetAllCoinsUseCase) :ViewModel(){
     private val _state = mutableStateOf(ListCoinState())
     val state : State<ListCoinState> =_state
 

@@ -14,7 +14,6 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object AppModule {
-
     @Provides
     @Singleton
     fun provideRetrofit() :Api{
@@ -25,10 +24,11 @@ object AppModule {
             .create(Api::class.java)
     }
 
-    @Provides
     @Singleton
+    @Provides
     fun provideRepository(api: Api):CoinRepository{
         return CoinRepositoryImpl(api)
     }
+
 
 }

@@ -36,6 +36,7 @@ fun DetailCoinDto.toDetailCoin() :DetailCoin{
     return DetailCoin(
         description = description,
         id = id,
+        rank=rank,
         is_active = is_active,
         is_new = is_new,
         name = name,

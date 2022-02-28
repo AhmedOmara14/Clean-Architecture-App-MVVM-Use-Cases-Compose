@@ -10,16 +10,16 @@ import retrofit2.HttpException
 import java.io.IOException
 import javax.inject.Inject
 
-class GetAllCoinsUseCase(@Inject val repository: CoinRepository) {
+class GetAllCoinsUseCase @Inject constructor(val repository: CoinRepository) {
     operator fun invoke():Flow<Resource<List<AllCoins>>> = flow {
         try {
-            emit(Resource.Loading())
+            emit(Resource.Loading<List<AllCoins>>())
             val coins = repository.getAllCoins().map { it.toCoin() }
             emit(Resource.Success(coins))
         }catch (e:HttpException){
-            emit(Resource.Error(e.localizedMessage ?: "an Error Occurred"))
+            emit(Resource.Error<List<AllCoins>>(e.localizedMessage ?: "an Error Occurred"))
         }catch (e:IOException){
-            emit(Resource.Error("No Internet Connection, Check your Internet"))
+            emit(Resource.Error<List<AllCoins>>("No Internet Connection, Check your Internet"))
         }
     }
 }
