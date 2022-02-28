@@ -15,6 +15,7 @@ Simple Project to explain Layered Architectures and the Application Layer in and
  * Dagger2-Hilt
  * MVVM
  * UseCase
+ * jetpack compose
  
  
  
